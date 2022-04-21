@@ -31,23 +31,13 @@ getInstruction("mashedPotatoes", 0, (step0) => {
   getInstruction("mashedPotatoes", 1, (step1) => {
     document.querySelector("#mashedPotatoes").innerHTML += `<li>${step1}</li>`;
     getInstruction("mashedPotatoes", 2, (step2) => {
-      document.querySelector(
-        "#mashedPotatoes"
-      ).innerHTML += `<li>${step2}</li>`;
+      document.querySelector("#mashedPotatoes").innerHTML += `<li>${step2}</li>`;
       getInstruction("mashedPotatoes", 3, (step3) => {
-        document.querySelector(
-          "#mashedPotatoes"
-        ).innerHTML += `<li>${step3}</li>`;
+        document.querySelector("#mashedPotatoes").innerHTML += `<li>${step3}</li>`;
         getInstruction("mashedPotatoes", 4, (step4) => {
-          document.querySelector(
-            "#mashedPotatoes"
-          ).innerHTML += `<li>${step4}</li>`;
-          document.querySelector(
-            "#mashedPotatoes"
-          ).innerHTML += `<li>Mashed potatoes are ready!</li>`;
-          document
-            .querySelector("#mashedPotatoesImg")
-            .removeAttribute("hidden");
+          document.querySelector("#mashedPotatoes").innerHTML += `<li>${step4}</li>`;
+          document.querySelector("#mashedPotatoes").innerHTML += `<li>Mashed potatoes are ready!</li>`;
+          document.querySelector("#mashedPotatoesImg").removeAttribute("hidden");
         });
       });
     });
@@ -124,9 +114,7 @@ async function makeBroccoli() {
       step = await obtainInstruction("broccoli", i);
       document.querySelector("#broccoli").innerHTML += `<li>${step}</li>`;
     }
-    document.querySelector(
-      "#broccoli"
-    ).innerHTML += `<li>Broccoli is ready!</li>`;
+    document.querySelector("#broccoli").innerHTML += `<li>Broccoli is ready!</li>`;
     document.querySelector("#broccoliImg").removeAttribute("hidden");
   } catch (error) {
     console.error(error);
@@ -145,16 +133,7 @@ const promise6 = obtainInstruction("brusselsSprouts", 5);
 const promise7 = obtainInstruction("brusselsSprouts", 6);
 const promise8 = obtainInstruction("brusselsSprouts", 7);
 
-Promise.all([
-  promise1,
-  promise2,
-  promise3,
-  promise4,
-  promise5,
-  promise6,
-  promise7,
-  promise8,
-])
+Promise.all([promise1, promise2, promise3, promise4, promise5, promise6, promise7, promise8,])
   .then((resolvedArr) => {
     resolvedArr.forEach((el) => {
       document.querySelector("#brusselsSprouts").innerHTML += `<li>${el}</li>`;
